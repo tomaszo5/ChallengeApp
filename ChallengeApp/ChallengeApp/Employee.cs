@@ -26,14 +26,17 @@
         }
         public void AddGrade(double grade)
         {
+            float gradeAsFloat = (float)grade;
             this.grades.Add((float)grade);
         }
         public void AddGrade(long grade)
         { 
+            float gradeAsFloat = (float)grade;
             this.grades.Add(grade);
         }
         public void AddGrade(int grade)
         {
+            float gradeAsFloat = grade;
             this.grades.Add(grade);
         }
         public void AddGrade(string grade)

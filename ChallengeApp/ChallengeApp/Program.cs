@@ -1,8 +1,8 @@
 ﻿using ChallengeApp;
 
 var employee = new Employee("Tomasz", "Szletter");
-employee.AddGrade(2);
-employee.AddGrade(2);
+employee.AddGrade("4000");
+employee.AddGrade(1f);
 employee.AddGrade(6);
 var statistics = employee.GetStatistics();
 
