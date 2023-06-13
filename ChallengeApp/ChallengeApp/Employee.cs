@@ -15,8 +15,42 @@
 
         public void AddGrade(float grade)
         {
+            if (grade >= 0 && grade <= 100)
+            {
+                this.grades.Add(grade);
+            }
+            else
+            { 
+                Console.WriteLine("invalid grade value");
+            } 
+        }
+        public void AddGrade(double grade)
+        {
+            this.grades.Add((float)grade);
+        }
+        public void AddGrade(long grade)
+        { 
             this.grades.Add(grade);
         }
+        public void AddGrade(int grade)
+        {
+            this.grades.Add(grade);
+        }
+        public void AddGrade(string grade)
+        {
+            if (float.TryParse(grade, out float result))
+            {
+               this.AddGrade(result);
+            }
+            else
+            {
+                Console.WriteLine("string is not float");
+                    
+            }
+        }
+        // parsowanie w stringach chcemy zrobic liczbe lub odwrotnie.
+        // metody zmiany string int float etc/ int.TryParse/
+        //sprawdzenie metody Try.
 
         public Statistics GetStatistics()
         {
