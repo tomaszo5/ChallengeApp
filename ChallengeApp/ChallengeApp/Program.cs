@@ -5,13 +5,18 @@ employee.AddGrade("4000");
 employee.AddGrade(1f);
 employee.AddGrade(6);
 var statistics = employee.GetStatistics();
+var statistics1 = employee.GetStatisticsWithForEach();
+var statistics2 = employee.GetStatisticsWithFor();
+var statistics3 = employee.GetStatisticsWithDoWhile();
+var statistics4 = employee.GetStatisticsWithWhile();
+
 
 //walidacja - sprawdzenie poprawnosci danych.
 
 
-Console.WriteLine($"Average: {statistics.Average:N2}");
-Console.WriteLine($"Min: {statistics.Min}");
-Console.WriteLine($"Max: {statistics.Max}");
+//Console.WriteLine($"Average: {statistics.Average:N2}");
+//Console.WriteLine($"Min: {statistics.Min}");
+//Console.WriteLine($"Max: {statistics.Max}");
 
 
 
