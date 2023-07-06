@@ -21,18 +21,11 @@ Console.WriteLine($"Average: {statistics.Average:N2}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");
 
-//Console.WriteLine(input);
 
 
 
 
 //walidacja - sprawdzenie poprawnosci danych.
-
-
-
-
-
-
 //co to jest ref:
 // przygotowanie metody
 // void (SetSth (ref Statistics statistics)
