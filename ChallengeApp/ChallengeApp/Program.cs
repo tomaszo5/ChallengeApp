@@ -1,24 +1,29 @@
 ﻿using ChallengeApp;
 
-var employee = new Employee("Tomasz", "Szletter");
-employee.AddGrade(4);
-employee.AddGrade(1);
-employee.AddGrade(6);
-employee.AddGrade('A');
-employee.AddGrade('c');
+Console.WriteLine("Witam w programie XYZY do oceny roboli");
+Console.WriteLine("======================================");
+Console.WriteLine();
+
+var employee = new Employee();
+
+while (true) 
+{
+    Console.WriteLine("Wpisz kolejną ocene pracownika");
+    var input = Console.ReadLine();
+    if (input == "q")
+    { 
+        break;
+    }
+    employee.AddGrade(input);
+}
 var statistics = employee.GetStatistics();
-Console.WriteLine(statistics.AverageLetter);    
+Console.WriteLine($"Average: { statistics.Average}");
+Console.WriteLine($"Minimal: { statistics.Min}");
+Console.WriteLine($"Maximum: { statistics.Max}");
+
 
 
 //walidacja - sprawdzenie poprawnosci danych.
-
-
-//Console.WriteLine($"Average: {statistics.Average:N2}");
-//Console.WriteLine($"Min: {statistics.Min}");
-//Console.WriteLine($"Max: {statistics.Max}");
-
-
-
 //co to jest ref:
 // przygotowanie metody
 // void (SetSth (ref Statistics statistics)
