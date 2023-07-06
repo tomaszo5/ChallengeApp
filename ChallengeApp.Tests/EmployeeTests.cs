@@ -8,7 +8,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter", "M");
+            var employee = new EmployeeInFile("Tomasz", "Szletter");
             employee.AddGrade(90);
 
 
@@ -24,7 +24,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter", "M");
+            var employee = new EmployeeInFile("Tomasz", "Szletter");
             employee.AddGrade(2);
 
 
@@ -40,7 +40,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter", "M");
+            var employee = new EmployeeInFile("Tomasz", "Szletter");
             employee.AddGrade(90);
             employee.AddGrade(20);
 
