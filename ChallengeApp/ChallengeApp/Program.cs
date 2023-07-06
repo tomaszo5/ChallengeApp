@@ -4,14 +4,27 @@ Console.WriteLine("Witaj w programie XYZ do oceny pracowników");
 Console.WriteLine("============================================");
 Console.WriteLine();
 Console.WriteLine("Dodaj ocenę pracownika");
-var input = Console.ReadLine();
-Console.WriteLine(input);
+
 var employee = new Employee("Tomasz", "Szletter");
-employee.AddGrade(input);
+while (true)
+{
+    Console.WriteLine("Dodaj kolejną ocenę pracownika");
+    var input = Console.ReadLine();
+    if (input == "q") 
+    {  
+        break;
+    }
+    employee.AddGrade(input);
+}
 var statistics = employee.GetStatistics();
 Console.WriteLine($"Average: {statistics.Average:N2}");
 Console.WriteLine($"Min: {statistics.Min}");
 Console.WriteLine($"Max: {statistics.Max}");
+
+//Console.WriteLine(input);
+
+
+
 
 //walidacja - sprawdzenie poprawnosci danych.
 
