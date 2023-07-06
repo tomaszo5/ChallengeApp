@@ -90,15 +90,69 @@
         }
         public void AddGrade(string grade)
         {
-            if (float.TryParse(grade, out float result))
-            {
-                this.AddGrade(result);
+            switch (grade)
+            { 
+              
+                case"1":
+                    AddGrade(0);
+                    break; 
+                case "1+":
+                case "+1": 
+                    AddGrade(5);
+                    break;
+                case "-2":
+                case "2-":
+                    AddGrade(20);
+                    break;
+                case "2":
+                    AddGrade(25);
+                    break;
+                case "+2":
+                case "2+":
+                    AddGrade(30);
+                    break;
+                case "-3":
+                case "3-":
+                    AddGrade(35);
+                    break;
+                case "+3":
+                case "3+":
+                    AddGrade(45);
+                    break;
+                case "3":
+                    AddGrade(40);
+                    break;
+                case "-4":
+                case "4-":
+                    AddGrade(50);
+                    break;
+                case "+4":
+                case "4+":
+                    AddGrade(70);
+                    break;
+                case "4":
+                    AddGrade(60);
+                    break;
+                case "-5":
+                case "5-":
+                    AddGrade(65);
+                    break;
+                case "5+":
+                case "+5":
+                    AddGrade(75);
+                    break;
+                case "5":
+                    AddGrade(80);
+                    break;
+                case "-6":
+                case "6-":
+                    AddGrade(90);
+                    break;
+                case "6":
+                    AddGrade(100);
+                    break;
             }
-            else
-            {
-                throw new Exception("string is not float");
-
-            }
+                        
         }
         // parsowanie w stringach chcemy zrobic liczbe lub odwrotnie.
         // metody zmiany string int float etc/ int.TryParse/
