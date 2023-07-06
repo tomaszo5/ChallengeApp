@@ -7,6 +7,10 @@ namespace ChallengeApp
     public class Employee
     {
         private List<float> grades = new List<float>();
+        public Employee()
+        {
+           
+        }
         public Employee(string name, string surname)
         {
             this.Name = name;

@@ -8,27 +8,25 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter");
-            employee.AddGrade(2);
-            employee.AddGrade(2);
-            employee.AddGrade(6);
+            var employee = new Employee();
+            employee.AddGrade(90);
+
 
             //act
 
             var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(6, statistics.Max);
+            Assert.AreEqual(90, statistics.Max);
         }
 
         [Test]
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter");
+            var employee = new Employee();
             employee.AddGrade(2);
-            employee.AddGrade(2);
-            employee.AddGrade(6);
+
 
             //act
 
@@ -42,17 +40,16 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             //arrange
-            var employee = new Employee("Tomasz", "Szletter");
-            employee.AddGrade(2);
-            employee.AddGrade(2);
-            employee.AddGrade(6);
+            var employee = new Employee();
+            employee.AddGrade(90);
+            employee.AddGrade(20);
 
             //act
 
             var statistics = employee.GetStatistics();
 
             //assert
-            Assert.AreEqual(3.33, 2, statistics.Average);
+            Assert.AreEqual(46, 2, statistics.Average);
         }
     }
 }
