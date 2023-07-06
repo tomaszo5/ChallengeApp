@@ -1,20 +1,15 @@
-﻿using System.Diagnostics;
-using System.Net.Http.Headers;
-using System.Reflection.Metadata;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
     public class Employee
     {
+        private const char sex = 'M';
+
         private List<float> grades = new List<float>();
-        public Employee()
-        {
-           
-        }
         public Employee(string name, string surname)
         {
             this.Name = name;
             this.Surname = surname;
+            
         }
 
         public string Name { get; private set; }
@@ -28,9 +23,9 @@ namespace ChallengeApp
                 this.grades.Add(grade);
             }
             else
-            { 
-                Console.WriteLine("invalid grade value");
-            } 
+            {
+                throw new Exception("invalid grade value");
+            }
         }
         public void AddGrade(double grade)
         {
@@ -38,7 +33,7 @@ namespace ChallengeApp
             this.grades.Add((float)grade);
         }
         public void AddGrade(long grade)
-        { 
+        {
             float gradeAsFloat = (float)grade;
             this.grades.Add(grade);
         }
@@ -47,14 +42,14 @@ namespace ChallengeApp
             this.grades.Add(grade);
         }
 
-        public void AddGrade (char grade)
-        { 
+        public void AddGrade(char grade)
+        {
             if (grade == 'A')
-            {  
+            {
                 this.grades.Add(100);
-            }       
+            }
             else if (grade == 'B')
-            { 
+            {
                 this.grades.Add(80);
             }
             else if (grade == 'C')
@@ -69,8 +64,8 @@ namespace ChallengeApp
             {
                 this.grades.Add(20);
             }
-            
-            switch(grade)
+
+            switch (grade)
             {
                 case 'A':
                 case 'a':
@@ -93,21 +88,21 @@ namespace ChallengeApp
                     this.grades.Add(20);
                     break;
                 default:
-                    Console.WriteLine("Wrong Grade");
-                    this.grades.Add(0);
-                    break;
-            }   
+                    throw new Exception("Wrong Letter");
+
+
+            }
         }
         public void AddGrade(string grade)
         {
             if (float.TryParse(grade, out float result))
             {
-               this.AddGrade(result);
+                this.AddGrade(result);
             }
             else
             {
-                Console.WriteLine("string is not float");
-                    
+                throw new Exception("string is not float");
+
             }
         }
         // parsowanie w stringach chcemy zrobic liczbe lub odwrotnie.
@@ -136,35 +131,17 @@ namespace ChallengeApp
 
             statistics.Average /= this.grades.Count;
 
-            switch (statistics.Average)
+            statistics.AverageLetter = statistics.Average switch
             {
-                case var average when average >= 80:
-                    statistics.AverageLetter = 'A';
-                    break;
-                case var average when average >= 60:
-                    statistics.AverageLetter = 'B';
-                    break;
-                case var average when average >= 40:
-                    statistics.AverageLetter = 'C';
-                    break;
-                case var average when average >= 20:
-                    statistics.AverageLetter = 'D';
-                    break;
-                default:
-                    statistics.AverageLetter = 'E';
-                    break;
-             
-            }
-            
-
-        
-        
-        
-
-        
+                var average when average >= 80 => 'A',
+                var average when average >= 60 => 'B',
+                var average when average >= 40 => 'C',
+                var average when average >= 20 => 'D',
+                _ => 'E',
+            };
             return statistics;
         }
-       
+
     }
 }
 // rodzaje petli C# : foreach, for, do ,do while, while.
