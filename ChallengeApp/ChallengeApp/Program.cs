@@ -2,10 +2,9 @@
 
 Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
 Console.WriteLine("===============================================");
+Console.WriteLine("Naciśnij q aby zakończyć");
 
 var employee = new EmployeeInMemory("Tomasz", "Szletter","M", 32);
-
-employee.GradeAdded += EmployeeGradeAdded;
 employee.GradeAdded += EmployeeGradeAdded;
 
 void EmployeeGradeAdded(object sender, EventArgs args)
@@ -13,13 +12,13 @@ void EmployeeGradeAdded(object sender, EventArgs args)
     Console.WriteLine("dodano nową ocenę");
 }
 
-employee.GradeAdded -= EmployeeGradeAdded;
+//employee.GradeAdded -= EmployeeGradeAdded;
 
-employee.AddGrade(5);
+//employee.AddGrade(5);
 
 while (true)
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    Console.WriteLine("Podaj ocenę pracownika");
     var input = Console.ReadLine();
     if (input == "q")
     {
@@ -46,9 +45,9 @@ Console.WriteLine();
 
 while (true)
 {
-    Console.WriteLine("Podaj kolejną ocenę pracownika (jeśli koniec, nacisnij 'q/Q') :");
+    Console.WriteLine("Podaj kolejną ocenę pracownika (jeśli koniec, nacisnij 'q') :");
     var input = Console.ReadLine();
-    if (input == "q" || input == "Q")
+    if (input == "q")
     {
         break;
     }
