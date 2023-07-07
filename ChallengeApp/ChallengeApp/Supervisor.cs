@@ -6,6 +6,12 @@
 
         public string Surname => throw new NotImplementedException();
 
+        public string Sex => throw new NotImplementedException();
+
+        public int Age => throw new NotImplementedException();
+
+
+
         public void AddGrade(float grade)
         {
             throw new NotImplementedException();
@@ -22,6 +28,21 @@
         }
 
         public void AddGrade(char grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddGrade(string grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddGrade(byte grade)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddGrade(short grade)
         {
             throw new NotImplementedException();
         }

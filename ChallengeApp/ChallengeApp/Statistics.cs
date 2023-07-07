@@ -1,6 +1,4 @@
-﻿using ChallengeApp;
-
-namespace ChallengeApp
+﻿namespace ChallengeApp
 {
     public class Statistics
     {
@@ -11,5 +9,6 @@ namespace ChallengeApp
         public float Average { get; set; }
 
         public char AverageLetter { get; set; }
+
     }
 }

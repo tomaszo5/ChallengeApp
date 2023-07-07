@@ -1,5 +1,3 @@
-using NUnit.Framework;
-
 namespace ChallengeApp.Tests
 {
     public class EmployeeTests
@@ -8,7 +6,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMax()
         {
             //arrange
-            var employee = new EmployeeInFile("Tomasz", "Szletter");
+            var employee = new EmployeeInFile("Tomasz", "Szletter", "M", 32);
             employee.AddGrade(90);
 
 
@@ -24,7 +22,7 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectMin()
         {
             //arrange
-            var employee = new EmployeeInFile("Tomasz", "Szletter");
+            var employee = new EmployeeInFile("Tomasz", "Szletter", "M", 32);
             employee.AddGrade(2);
 
 
@@ -40,9 +38,9 @@ namespace ChallengeApp.Tests
         public void WhenGetStatisticsCalled_ShouldReturnCorrectAverage()
         {
             //arrange
-            var employee = new EmployeeInFile("Tomasz", "Szletter");
+            var employee = new EmployeeInFile("Tomasz", "Szletter", "M", 32);
             employee.AddGrade(90);
-            employee.AddGrade(20);
+            employee.AddGrade(2);
 
             //act
 

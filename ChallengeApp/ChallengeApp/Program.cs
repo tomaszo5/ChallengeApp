@@ -1,37 +1,73 @@
 ﻿using ChallengeApp;
 
-Console.WriteLine("Witaj w programie XYZ do oceny pracowników");
-Console.WriteLine("============================================");
+Console.WriteLine("Witamy w programie XYZ do oceny Pracowników");
+Console.WriteLine("===============================================");
+
+var employee = new EmployeeInMemory("Tomasz", "Szletter","M", 32);
+
+employee.GradeAdded += EmployeeGradeAdded;
+employee.GradeAdded += EmployeeGradeAdded;
+
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("dodano nową ocenę");
+}
+
+employee.GradeAdded -= EmployeeGradeAdded;
+
+employee.AddGrade(5);
+
+while (true)
+{
+    Console.WriteLine("Podaj kolejną ocenę pracownika");
+    var input = Console.ReadLine();
+    if (input == "q")
+    {
+        break;
+    }
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
+}
+
+var statistics = employee.GetStatistics();
+
+Console.WriteLine($"Average Letter: {statistics.AverageLetter}");
+Console.WriteLine($"Average: {statistics.Average:N2}");
+Console.WriteLine($"Min: {statistics.Min}");
+Console.WriteLine($"Max: {statistics.Max}");
 Console.WriteLine();
 
 
-var employee = new EmployeeInFile("Tomasz", "Szletter");
-employee.AddGrade(0.5f);
-//while (true)
-//{
-//    Console.WriteLine("Dodaj kolejną ocenę pracownika");
-//    var input = Console.ReadLine();
-//    if (input == "q") 
-//    {  
-//        break;
-//    }
+while (true)
+{
+    Console.WriteLine("Podaj kolejną ocenę pracownika (jeśli koniec, nacisnij 'q/Q') :");
+    var input = Console.ReadLine();
+    if (input == "q" || input == "Q")
+    {
+        break;
+    }
 
-//    try
-//    {
-//        employee.AddGrade(input);   
-//    }
-//    catch(Exception e)
-//    {
-//        Console.WriteLine($"Exeption catched:{e.Message}");
-//    }
-//}
-//var statistics = employee.GetStatistics();
-//Console.WriteLine($"Average: {statistics.Average:N2}");
-//Console.WriteLine($"Min: {statistics.Min}");
-//Console.WriteLine($"Max: {statistics.Max}");
+    try
+    {
+        employee.AddGrade(input);
+    }
+    catch (Exception e)
+    {
+        Console.WriteLine($"Exception catched: {e.Message}");
+    }
+}
 
 
-
+Console.WriteLine($"Tomasz Szletter - Average Letter: {statistics.AverageLetter}");
+Console.WriteLine($"Tomasz Szletter - Average: {statistics.Average:N2}");
+Console.WriteLine($"Tomasz Szletter - Min: {statistics.Min}");
+Console.WriteLine($"Tomasz Szletter - Max: {statistics.Max}");
 
 
 //walidacja - sprawdzenie poprawnosci danych.
